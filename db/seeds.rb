@@ -11,4 +11,5 @@ event_1 = Event.create(name: "Greenville School", user_id: user.id, description:
 
 event_2 = Event.create(name: "Hurricane in Uruguay", user_id: user.id, description: "Collect red hats", address: "4 Allen street", due_by: 8.days.from_now, contact: "5263115", website: "mica@gmail.com")
 
-
+#item_2 = Item.create(name: "socks", size: "S, m, L", quantity: 11, description: "coecting socks for any size for victims of hurricane katrina")
+#item_1 = Item.create(name: "sweater", size: "kids 10-12", quantity: 34, description: "Collecting sweaters for a low-income school to give sweaters to students for Christmas")
