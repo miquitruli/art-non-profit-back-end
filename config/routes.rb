@@ -4,4 +4,14 @@ Rails.application.routes.draw do
   resources :items
   resources :sessions
   resources :users
+  get '/current_user', to: 'current_user#index'
 end
+
+  # namespace :api do
+  #   namespace :v1 do
+  #     resources :users, only: [:create]
+  #     post '/login', to 'auth#create'
+  #     get '/profile', to 'users#profile'
+  #   end
+  # end
+

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     skip_before_action :authorized #methods can be used before logged in
-
+    
     def create
         user = User.new(user_params)
         if user.save

@@ -4,4 +4,6 @@ class User < ApplicationRecord
 
     validates :name, :email, presence: true
     has_secure_password #uses bcrypt, store and authenticate password
+
+    
 end
