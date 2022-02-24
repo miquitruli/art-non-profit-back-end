@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :items
   resources :sessions
   resources :users
+  resources :user_items
   get '/current_user', to: 'current_user#index'
 end
 

@@ -3,4 +3,8 @@ class Item < ApplicationRecord
     belongs_to :event
 
     validates :name, :quantity, presence: true
+
+    def quantity_remaining
+        quantity - user_items.sum(:quantity)
+    end
 end
