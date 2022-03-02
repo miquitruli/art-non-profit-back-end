@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+    skip_before_action :authorized
+    
     def create
         item = Item.create(item_params)
         render json: item

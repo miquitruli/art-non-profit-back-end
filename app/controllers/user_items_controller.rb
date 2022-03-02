@@ -1,4 +1,6 @@
 class UserItemsController < ApplicationController
+    skip_before_action :authorized
+    
     def create
         event = Event.find(user_item_params[:event_id])
 

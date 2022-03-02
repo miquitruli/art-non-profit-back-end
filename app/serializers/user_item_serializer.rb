@@ -1,5 +1,5 @@
 class UserItemSerializer < ActiveModel::Serializer
-    attributes :quantity, :item, :item_name, :event_due_by, :event_name
+    attributes :quantity, :item, :item_name, :event_due_by, :event_name, :event_address
     
     belongs_to :item
   
@@ -8,11 +8,17 @@ class UserItemSerializer < ActiveModel::Serializer
     end 
     
     def event_due_by
-        object.item.event.due_by&.strftime("%m-%d-%Y")
+        if object.item.event.due_by >= Time.current.beginning_of_day
+            object.item.event.due_by&.strftime("%m-%d-%Y")
+        end
     end
 
     def event_name
         object.item.event.name
+    end
+
+    def event_address
+        object.item.event.address
     end
 end
 
